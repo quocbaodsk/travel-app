@@ -1,0 +1,14 @@
+services:
+  mysql-client:
+    image: mysql:8
+    volumes:
+      - ./database:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_HOST: database-2.ctuwuc2ays8o.ap-southeast-1.rds.amazonaws.com
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: quocbaol2090
+      MYSQL_DATABASE: travel_app
+    command: >
+      mysql -h database-2.ctuwuc2ays8o.ap-southeast-1.rds.amazonaws.com
+      -u admin -pquocbaol2090 travel_app < /docker-entrypoint-initdb.d/init.sql
+    network_mode: host

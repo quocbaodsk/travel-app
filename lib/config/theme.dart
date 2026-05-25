@@ -3,18 +3,18 @@ import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
-    useMaterial3: false,
+    useMaterial3: true,
     textTheme: GoogleFonts.signikaTextTheme(),
-    primaryColor: const Color(0xFFC097FF),
-    scaffoldBackgroundColor: Colors.white,
     colorScheme: ColorScheme.fromSeed(
       seedColor: const Color(0xFFFF9800),
+      primary: const Color(0xFFC097FF),
       secondary: const Color(0xFF2196F3),
+      surface: Colors.white,
     ),
+    scaffoldBackgroundColor: Colors.white,
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        elevation: 2,
-        padding: const EdgeInsets.symmetric(vertical: 15),
+        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 24),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
         ),
